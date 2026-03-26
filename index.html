@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeachWithMe | Literacy Intervention</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 600px; margin: auto; background: #f4f7f6; }
+        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; text-align: center; }
+        .credits { font-size: 0.8em; color: #7f8c8d; text-align: center; border-top: 1px solid #eee; margin-top: 20px; padding-top: 10px; }
+        .session-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 20px; }
+        .session-btn { background: #3498db; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; text-align: center; }
+        .phase-header { background: #27ae60; color: white; padding: 5px 10px; border-radius: 4px; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>TeachWithMe</h1>
+    <p>A digital literacy intervention for parents and tutors to support young readers.</p>
+    
+    <div class="phase-header">Phase 1: Seed (Sessions 1-12)</div>
+    <div class="session-grid" id="seed-sessions"></div>
+
+    <div class="phase-header">Phase 2: Sprout (Sessions 13-24)</div>
+    <div class="session-grid" id="sprout-sessions"></div>
+
+    <div class="phase-header">Phase 3: Tree (Sessions 25-35)</div>
+    <div class="session-grid" id="tree-sessions"></div>
+
+    <div class="credits">
+        Curriculum Developer: <strong>Kristine Joy B. Tribaco, T3</strong><br>
+        T'boli National High School
+    </div>
+</div>
+
+<script>
+    function createButtons(containerId, start, end) {
+        const container = document.getElementById(containerId);
+        for (let i = start; i <= end; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'session-btn';
+            btn.innerText = i;
+            btn.onclick = () => alert('Opening Session ' + i + '. Mastery Goal: 90%');
+            container.appendChild(btn);
+        }
+    }
+    createButtons('seed-sessions', 1, 12);
+    createButtons('sprout-sessions', 13, 24);
+    createButtons('tree-sessions', 25, 35);
+</script>
+
+</body>
+</html>
